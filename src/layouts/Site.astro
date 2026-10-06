@@ -1,4 +1,6 @@
 ---
+import SiteInformationLinks from "../components/SiteInformationLinks.astro";
+import AgentMetadata from '../components/AgentMetadata.astro';
 import css from '../styles/global.css?raw';
 
 const title = 'Vibe coding for adults — Kogen';
@@ -49,17 +51,7 @@ const socialImage = `${canonical}social-preview.png`;
         document.head.appendChild(script);
       }
     </script>
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: 'Vibe Coding for Adults',
-      url: canonical,
-      description,
-      isPartOf: { '@type': 'WebSite', name: 'Vibe Coding for Adults', url: canonical },
-      about: { '@type': 'SoftwareApplication', name: 'Kogen', url: 'https://kogen.dev/' },
-      creator: { '@type': 'Person', name: 'Almir Sarajčić', url: 'https://almirsarajcic.com/' },
-    })}></script>
-  </head>
+  <AgentMetadata /></head>
   <body class="campaign-page">
     <a class="skip" href="#main">Skip to content</a>
     <header class="campaign-header wrap">
@@ -70,5 +62,5 @@ const socialImage = `${canonical}social-preview.png`;
     </header>
     <slot />
     <footer class="wrap"><div><p>Made by <a href="https://almirsarajcic.com">Almir Sarajčić</a></p><a href="mailto:contact@kogen.dev">contact@kogen.dev</a></div><div><a href="https://www.apache.org/licenses/LICENSE-2.0">Licensed under Apache 2.0</a><p>© 2026 Optimum Tech, LLC</p></div></footer>
-  </body>
+  <SiteInformationLinks /></body>
 </html>

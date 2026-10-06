@@ -58,3 +58,7 @@ Change this page rarely. Review when links break, domain renewal is due,
 analytics ownership changes, or a dependency/security issue affects the build.
 The page explains the approach; current availability belongs to kogen.dev.
 Contact: [contact@kogen.dev](mailto:contact@kogen.dev).
+
+## Agent-readable pages
+
+Authored Astro pages own public text; `agent-site.json` holds site identity. `npm run build` runs Astro and Python 3 `scripts/build-agent-content.py` to create page Markdown, root `.md` URLs, `llms.txt`, and sitemap entries in `dist/`. `functions/_middleware.js` serves Markdown when requested for HTML pages. Edit the sources; `dist/` is generated.

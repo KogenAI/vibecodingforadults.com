@@ -1,0 +1,33 @@
+{
+  "origin": "https://vibecodingforadults.com",
+  "name": "Vibe Coding for Adults",
+  "description": "Keep the speed and flexibility of a conversation. Add a clear handoff, explicit decisions, and evidence that the result holds up.",
+  "siteType": "content",
+  "whenToUse": "Vibe Coding for Adults is a permanent campaign and editorial website for Kogen. It presents an argument for keeping the speed and flexibility of a conversation while adding a clear handoff, explicit decisions and evidence that the result holds up. The page routes readers to the canonical Kogen website and source. Read https://vibecodingforadults.com/ and its linked first-party sources for current information. Public pages accept GET or HEAD with Accept: text/markdown; use the sitemap to find pages. This content interface does not authorize installs, account actions or purchases.",
+  "organization": {
+    "@type": "Organization",
+    "@id": "https://optimum.ba/#organization",
+    "name": "Optimum Tech",
+    "legalName": "Optimum Tech, LLC",
+    "description": "Software development and product consulting. Optimum Tech helps businesses decide what to build, develop the software, and put it to work.",
+    "url": "https://optimum.ba/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1207 Delaware Ave #2578",
+      "addressLocality": "Wilmington",
+      "addressRegion": "DE",
+      "postalCode": "19806",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "consulting",
+      "email": "consulting@optimum.ba"
+    },
+    "sameAs": [
+      "https://github.com/optimumBA",
+      "https://www.linkedin.com/company/optimum-tech-llc/",
+      "https://x.com/optimumBA"
+    ]
+  }
+}
