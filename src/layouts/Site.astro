@@ -3,10 +3,10 @@ import SiteInformationLinks from "../components/SiteInformationLinks.astro";
 import AgentMetadata from '../components/AgentMetadata.astro';
 import css from '../styles/global.css?raw';
 
-const title = 'Vibe coding for adults — Kogen';
-const description = 'Keep the speed and flexibility of a conversation. Add a clear handoff, explicit decisions, and evidence that the result holds up.';
-const canonical = 'https://vibecodingforadults.com/';
-const socialImage = `${canonical}social-preview.png`;
+interface Props { analytics?: boolean; title?: string; description?: string; }
+const { analytics = true, title = 'Vibe coding for adults — Kogen', description = 'Keep the speed and flexibility of a conversation. Add a clear handoff, explicit decisions, and evidence that the result holds up.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, 'https://vibecodingforadults.com').href;
+const socialImage = 'https://vibecodingforadults.com/social-preview.png';
 ---
 <!doctype html>
 <html lang="en">
@@ -36,7 +36,7 @@ const socialImage = `${canonical}social-preview.png`;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
     <style is:inline set:html={css}></style>
-    <script is:inline>
+    {analytics && <script is:inline>
       if (location.hostname === 'vibecodingforadults.com') {
         window.plausible = window.plausible || function () {
           (window.plausible.q = window.plausible.q || []).push(arguments);
@@ -50,7 +50,7 @@ const socialImage = `${canonical}social-preview.png`;
         script.src = 'https://plausible.io/js/pa-LX8snwFJPEFRR8Mb52giC.js';
         document.head.appendChild(script);
       }
-    </script>
+    </script>}
   <AgentMetadata /></head>
   <body class="campaign-page">
     <a class="skip" href="#main">Skip to content</a>
@@ -58,9 +58,9 @@ const socialImage = `${canonical}social-preview.png`;
       <a class="brand" href="https://kogen.dev" aria-label="Visit Kogen">
         <img src="/brand/kogen-wordmark-black.svg" width="104" height="40" alt="Kogen" />
       </a>
-      <nav aria-label="Main navigation"><a href="#the-approach">The approach</a><a href="https://kogen.dev">Meet Kogen <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="Main navigation"><a href="/#the-approach">The approach</a><a href="https://kogen.dev">Meet Kogen <span aria-hidden="true">↗</span></a></nav>
     </header>
     <slot />
-    <footer class="wrap"><div><p>Made by <a href="https://almirsarajcic.com">Almir Sarajčić</a></p><a href="mailto:contact@kogen.dev">contact@kogen.dev</a></div><div><a href="https://www.apache.org/licenses/LICENSE-2.0">Licensed under Apache 2.0</a><p>© 2026 Optimum Tech, LLC</p></div></footer>
-  <SiteInformationLinks /></body>
+    <footer class="wrap"><div><p>Made by <a href="https://almirsarajcic.com">Almir Sarajčić</a></p><a href="mailto:contact@kogen.dev">contact@kogen.dev</a></div><SiteInformationLinks /><div><a href="https://www.apache.org/licenses/LICENSE-2.0">Licensed under Apache 2.0</a><p>© 2026 Optimum Tech, LLC</p></div></footer>
+  </body>
 </html>
