@@ -3,8 +3,8 @@ import SiteInformationLinks from "../components/SiteInformationLinks.astro";
 import AgentMetadata from '../components/AgentMetadata.astro';
 import css from '../styles/global.css?raw';
 
-interface Props { analytics?: boolean; title?: string; description?: string; }
-const { analytics = true, title = 'Vibe coding for adults — Kogen', description = 'Keep the speed and flexibility of a conversation. Add a clear handoff, explicit decisions, and evidence that the result holds up.' } = Astro.props;
+interface Props { analytics?: boolean; title?: string; description?: string; robots?: string; }
+const { analytics = true, title = 'Vibe Coding for Adults — Build your own way of working', description = 'Learn to write, test and improve your own skills, rules and workflows with coding agents. A practical course with Almir Sarajčić.', robots = 'index, follow' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, 'https://vibecodingforadults.com').href;
 const socialImage = 'https://vibecodingforadults.com/social-preview.png';
 ---
@@ -15,7 +15,8 @@ const socialImage = 'https://vibecodingforadults.com/social-preview.png';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#FFF9F2" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Vibe Coding for Adults" />
@@ -25,16 +26,16 @@ const socialImage = 'https://vibecodingforadults.com/social-preview.png';
     <meta property="og:image" content={socialImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Vibe coding for adults. The fun part was never the problem." />
+    <meta property="og:image:alt" content="Vibe Coding for Adults. Build your own way of working. Skills. Rules. Workflows." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
-    <meta name="twitter:image:alt" content="Vibe coding for adults. The fun part was never the problem." />
+    <meta name="twitter:image:alt" content="Vibe Coding for Adults. Build your own way of working. Skills. Rules. Workflows." />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preload" href="/fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
     <style is:inline set:html={css}></style>
     {analytics && <script is:inline>
       if (location.hostname === 'vibecodingforadults.com') {
@@ -52,15 +53,16 @@ const socialImage = 'https://vibecodingforadults.com/social-preview.png';
       }
     </script>}
   <AgentMetadata /></head>
-  <body class="campaign-page">
+  <body class="course-page">
     <a class="skip" href="#main">Skip to content</a>
-    <header class="campaign-header wrap">
-      <a class="brand" href="https://kogen.dev" aria-label="Visit Kogen">
-        <img src="/brand/kogen-wordmark-black.svg" width="104" height="40" alt="Kogen" />
+    <header class="course-header wrap">
+      <a class="brand" href="/" aria-label="Vibe Coding for Adults home">
+        <img class="brand-logo" src="/brand/logo-light.svg" width="260" height="70" alt="Vibe Coding for Adults" />
+        <span class="brand-compact" aria-hidden="true"><img src="/brand/mark-light.svg" width="32" height="32" alt="" /><span>Vibe Coding<br />for Adults</span></span>
       </a>
-      <nav aria-label="Main navigation"><a href="/#the-approach">The approach</a><a href="https://kogen.dev">Meet Kogen <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="Main navigation"><a href="/#course">The course</a><a href="/contact/">Contact</a></nav>
     </header>
     <slot />
-    <footer class="wrap"><div><p>Made by <a href="https://almirsarajcic.com">Almir Sarajčić</a></p><a href="mailto:contact@kogen.dev">contact@kogen.dev</a></div><SiteInformationLinks /><div><a href="https://www.apache.org/licenses/LICENSE-2.0">Licensed under Apache 2.0</a><p>© 2026 Optimum Tech, LLC</p></div></footer>
+    <footer class="wrap"><div><p>A course by <a href="https://almirsarajcic.com">Almir Sarajčić</a></p><a href="mailto:almir@optimum.ba">almir@optimum.ba</a></div><SiteInformationLinks /><div><a href="https://github.com/KogenAI/vibecodingforadults.com">Website source</a><p>© 2026 Optimum Tech, LLC</p></div></footer>
   </body>
 </html>

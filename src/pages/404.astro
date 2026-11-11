@@ -1,3 +1,10 @@
 ---
+import Site from '../layouts/Site.astro';
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="robots" content="noindex"/><title>Page not found — Kogen</title></head><body style="font-family:Arial,sans-serif;max-width:640px;margin:15vh auto;padding:24px;line-height:1.6"><h1>That page isn’t here.</h1><p><a href="/">Back to Vibe Coding for Adults</a></p></body></html>
+<Site title="Page not found — Vibe Coding for Adults" analytics={false} robots="noindex">
+  <main id="main" class="wrap" style="padding-block: 96px;">
+    <p class="eyebrow">404 / Page not found</p>
+    <h1>That page isn’t here.</h1>
+    <p><a href="/">Back to Vibe Coding for Adults</a></p>
+  </main>
+</Site>

@@ -1,20 +1,24 @@
 # Vibe Coding for Adults
 
-Permanent campaign site for Kogen at <https://vibecodingforadults.com>.
+Public course home at <https://vibecodingforadults.com>.
 
-The site has one job: present the “Vibe coding for adults” argument and route
-readers to the canonical Kogen website and source. Product capabilities,
-availability, documentation, and changing status remain owned by
-<https://kogen.dev>.
+A practical course with Almir Sarajčić for people learning to write, test and
+improve their own skills, rules and workflows with coding agents. The page
+presents the working curriculum, lesson format and founding beta plan.
 
 ## Start here
 
 - `src/pages/index.astro` — the complete public page
 - `src/layouts/Site.astro` — metadata, analytics, header and footer
-- `src/styles/global.css` — responsive Kogen typography and page layout
+- `src/styles/global.css` — responsive Flow + intent typography and page layout
 - `src/pages/404.astro` — actual missing-page response
 - `public/` — brand assets, fonts, icons, social preview and crawler files
-- [LICENSE](LICENSE) — Apache 2.0, matching the Kogen repositories
+- [LICENSE](LICENSE) — Apache 2.0 for the website source
+
+The Flow + intent assets are distribution copies of the identity maintained at
+[optimumBA/design](https://github.com/optimumBA/design/tree/main/projects/vibe/identity).
+Keep their SVG paths intact. Outfit is bundled under the SIL Open Font License
+in `public/fonts/OFL.txt`.
 
 ## Work locally
 
@@ -54,10 +58,8 @@ If a build fails, fix the source and rebuild; never upload stale output. Roll
 back through Cloudflare's prior successful deployment when available, or revert
 the source and push through the same Git integration.
 
-Change this page rarely. Review when links break, domain renewal is due,
-analytics ownership changes, or a dependency/security issue affects the build.
-The page explains the approach; current availability belongs to kogen.dev.
-Contact: [contact@kogen.dev](mailto:contact@kogen.dev).
+Review when course information, enrollment availability, brand masters or links
+change. Contact: [almir@optimum.ba](mailto:almir@optimum.ba).
 
 ## Agent-readable pages
 
