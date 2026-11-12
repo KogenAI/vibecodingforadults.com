@@ -6,6 +6,12 @@ A practical course with Almir Sarajčić for people learning to write, test and
 improve their own skills, rules and workflows with coding agents. The page
 presents the working curriculum, lesson format and founding beta plan.
 
+Course navigation opens `https://course.vibecodingforadults.com/lessons`.
+Sign-in uses `/login` on that host, and the homepage preview opens
+`/lessons/make-your-first-skill-reliable`. Keep the season status beside the
+price current with the platform. Preview notes are available and videos are
+forthcoming as of 12 November 2026.
+
 ## Start here
 
 - `src/pages/index.astro` — the complete public page
