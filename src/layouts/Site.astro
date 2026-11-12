@@ -2,11 +2,12 @@
 import SiteInformationLinks from "../components/SiteInformationLinks.astro";
 import AgentMetadata from '../components/AgentMetadata.astro';
 import css from '../styles/global.css?raw';
+import socialCard from '../assets/social-card.png';
 
 interface Props { analytics?: boolean; title?: string; description?: string; robots?: string; }
 const { analytics = true, title = 'Vibe Coding for Adults — Build your own way of working', description = 'Learn to write, test and improve your own skills, rules and workflows with coding agents. A practical course with Almir Sarajčić.', robots = 'index, follow' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, 'https://vibecodingforadults.com').href;
-const socialImage = 'https://vibecodingforadults.com/social-preview.png';
+const socialImage = new URL(socialCard.src, 'https://vibecodingforadults.com').href;
 ---
 <!doctype html>
 <html lang="en">
