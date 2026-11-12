@@ -6,11 +6,10 @@ A practical course with Almir Sarajčić for people learning to write, test and
 improve their own skills, rules and workflows with coding agents. The page
 presents the working curriculum, lesson format and founding beta plan.
 
-Course navigation opens `https://course.vibecodingforadults.com/lessons`.
-Sign-in uses `/login` on that host, and the homepage preview opens
-`/lessons/make-your-first-skill-reliable`. Keep the season status beside the
-price current with the platform. Preview notes are available and videos are
-forthcoming as of 12 November 2026.
+The purchase buttons and Sign in open `https://course.vibecodingforadults.com/`,
+which routes visitors into the sign-in and paid-access flow. All lesson content
+requires payment. Videos are forthcoming as of 12 November 2026. Lesson targets
+are 10–15 minutes of video, 10 minutes of practice and 30 minutes of homework.
 
 ## Start here
 
@@ -36,6 +35,14 @@ Plausible loads only on the canonical apex hostname. Local and preview builds
 must not send analytics. The canonical production hostname is the apex;
 `www.vibecodingforadults.com` permanently redirects to it while preserving the
 path and query string.
+
+Both purchase buttons emit the Plausible custom event `Course access click`
+using the existing site-specific script and its `plausible-event-name` class.
+Its matching custom-event goal belongs to the private `vibecodingforadults.com`
+Plausible property. This measures clicks toward paid access. A completed
+purchase requires separate fulfillment evidence. Keep account identifiers and
+personal data out of event properties. Goal setup/readback status is recorded
+in the owning course workspace's publication receipt.
 
 ## Publication checks
 
